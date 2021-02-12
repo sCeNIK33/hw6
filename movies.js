@@ -3,6 +3,7 @@
 // API key; in the form, indicate that you'll be using this API
 // key for educational or personal use, and you should receive
 // your new key right away.
+//API KEY: db3d694f164aefeeaecbe1ceaa2f38bb
 
 // For this exercise, we'll be using the "now playing" API endpoint
 // https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US
@@ -10,6 +11,9 @@
 // Note: image data returned by the API will only give you the filename;
 // prepend with `https://image.tmdb.org/t/p/w500/` to get the 
 // complete image URL
+
+//(These are high-level requirements for grading; more detailed mechanics are included in the comments of movies.js.)
+//Create a new brand-new repository in your GitHub account called hw6. Clone and open the code in VSCode. Add an HTML page and corresponding JS file – you can use the provided movies.html and movies.js as a starting point.
 
 window.addEventListener('DOMContentLoaded', async function(event) {
     // Step 1: Construct a URL to get movies playing now from TMDB, fetch

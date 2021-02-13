@@ -16,12 +16,17 @@
 //Create a new brand-new repository in your GitHub account called hw6. Clone and open the code in VSCode. Add an HTML page and corresponding JS file – you can use the provided movies.html and movies.js as a starting point.
 
 window.addEventListener('DOMContentLoaded', async function(event) {
+
     // Step 1: Construct a URL to get movies playing now from TMDB, fetch
     // data and put the Array of movie Objects in a variable called
     // movies. Write the contents of this array to the JavaScript
     // console to ensure you've got good data
     // ⬇️ ⬇️ ⬇️
-  
+  event.preventDefault()
+  let response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=db3d694f164aefeeaecbe1ceaa2f38bb&language=en-US`)
+  console.log(response)
+  let movies = await response.movies
+  console.log(movies)
     // ⬆️ ⬆️ ⬆️ 
     // End Step 1
     
@@ -37,7 +42,15 @@ window.addEventListener('DOMContentLoaded', async function(event) {
     //   <a href="#" class="watched-button block text-center text-white bg-green-500 mt-4 px-4 py-2 rounded">I've watched this!</a>
     // </div>
     // ⬇️ ⬇️ ⬇️
-  
+  for (let i=0; i<movies.length; i++) {
+    let movieId = movies[i].id
+    let movieList = document.querySelector('.movies')
+    todoList.insertAdjacentHTML('beforeend', `
+      <div class="w-1/5 p-4 movie-abcdefg1234567">
+        <img src="https://image.tmdb.org/t/p/w500/moviePosterPath.jpg" class="w-full">
+        <a href="#" class="watched-button block text-center text-white bg-green-500 mt-4 px-4 py-2 rounded">I've watched this!</a>
+      </div>
+    `)}
     // ⬆️ ⬆️ ⬆️ 
     // End Step 2
   
